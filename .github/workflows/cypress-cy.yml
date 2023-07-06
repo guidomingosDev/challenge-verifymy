@@ -6,7 +6,7 @@ on:
       - main
   pull_request:
     branches:
-      - main
+      - master
 
 jobs:
   build:
@@ -22,7 +22,10 @@ jobs:
           node-version: 14
 
       - name: Install dependencies
-        run: npm ci
+        run: npm install
 
       - name: Run Integration Tests
         run: npm run test:api
+      
+      - name: Run Ui Tests
+        run: npm test ui
