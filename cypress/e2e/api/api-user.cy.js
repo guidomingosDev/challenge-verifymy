@@ -21,7 +21,6 @@ describe("USER INTEGRATION TEST - POST/GET/PUT/DELETE", () => {
       idUser = response.body._id;
       expect(response.body._id).to.not.equal(null);
     });
-    cy.log(userData.nome);
   });
 
   it("Should retrieve a user by ID", () => {
