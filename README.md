@@ -1,98 +1,73 @@
-<div align="center" id="top"> 
-  <img src="./.github/app.gif" alt="Desafio Verifymy" />
+# Challenge verify-my
+Automated Testing Project with Cypress
 
-  &#xa0;
+## Description
 
-  <!-- <a href="https://desafioverifymy.netlify.app">Demo</a> -->
-</div>
+This is a test automation project using the Cypress framework. The project covers API test scenarios for the service: https://serverest.dev/ and UI test scenarios for the service: https://bugbank.netlify.app/.
 
-<h1 align="center">Desafio Verifymy</h1>
+Plus: GitHub workflow (GitHub Action) has been added.
 
-<p align="center">
-  <img alt="Github top language" src="https://img.shields.io/github/languages/top/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8">
+## Test Scenarios Checklist:
 
-  <img alt="Github language count" src="https://img.shields.io/github/languages/count/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8">
+`Backend API Tests: Integration Tests: POST/GET/PUT/DELETE`
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8">
+- Create a new user
 
-  <img alt="License" src="https://img.shields.io/github/license/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8">
+-  Retrieve a user by ID
 
-  <!-- <img alt="Github issues" src="https://img.shields.io/github/issues/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8" /> -->
+- Retrieve a user by Name
 
-  <!-- <img alt="Github forks" src="https://img.shields.io/github/forks/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8" /> -->
+- Retrieve a user by Email
 
-  <!-- <img alt="Github stars" src="https://img.shields.io/github/stars/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy?color=56BEB8" /> -->
-</p>
+- Retrieve a user by ID
 
-<!-- Status -->
+- Update a user
 
-<!-- <h4 align="center"> 
-	🚧  Desafio Verifymy 🚀 Under construction...  🚧
-</h4> 
+- Delete a user
 
-<hr> -->
+`UI Tests: Make a bank transfer between two accounts`
 
-<p align="center">
-  <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#sparkles-features">Features</a> &#xa0; | &#xa0;
-  <a href="#rocket-technologies">Technologies</a> &#xa0; | &#xa0;
-  <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
-  <a href="#checkered_flag-starting">Starting</a> &#xa0; | &#xa0;
-  <a href="#memo-license">License</a> &#xa0; | &#xa0;
-  <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">Author</a>
-</p>
+- Register two accounts with balance
 
-<br>
+- Login with the user
 
-## :dart: About ##
+- Make the transfer
 
-Describe your project
+- Validate the transaction
 
-## :sparkles: Features ##
+## **Requirements** 
 
-:heavy_check_mark: Feature 1;\
-:heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+Node v18^
 
-## :rocket: Technologies ##
+# Installation
+### 1 - Clone o repositório do projeto:
+```https://github.com/guidomingosDev/challenge-verifymy.git ```
 
-The following tools were used in this project:
-
-- [Expo](https://expo.io/)
-- [Node.js](https://nodejs.org/en/)
-- [React](https://pt-br.reactjs.org/)
-- [React Native](https://reactnative.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-
-## :white_check_mark: Requirements ##
-
-Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
-
-## :checkered_flag: Starting ##
-
-```bash
-# Clone this project
-$ git clone https://github.com/{{YOUR_GITHUB_USERNAME}}/desafio-verifymy
-
-# Access
-$ cd desafio-verifymy
-
-# Install dependencies
-$ yarn
-
-# Run the project
-$ yarn start
-
-# The server will initialize in the <http://localhost:3000>
+### 2 - Navigate to the project directory:
+```
+cd challenge-verifymy
 ```
 
-## :memo: License ##
+### 3 - Install the dependencies:
+``` 
+npm install 
+```
 
-This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
+### 4 - How to run the tests:
 
+To use the Cypress CLI: 
+```
+ npm run cy:open 
+```
 
-Made with :heart: by <a href="https://github.com/{{YOUR_GITHUB_USERNAME}}" target="_blank">{{YOUR_NAME}}</a>
+To run the API tests:
 
-&#xa0;
+```
+ npm run test:api
+```
 
-<a href="#top">Back to top</a>
+To run the UI tests: 
+```
+ npm run test:ui
+```
+
