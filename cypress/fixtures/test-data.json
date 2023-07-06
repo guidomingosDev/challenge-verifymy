@@ -1,0 +1,7 @@
+{
+  "type": {
+    "nome": "nome",
+    "email": "email",
+    "id":"_id"
+  }
+}
