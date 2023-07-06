@@ -28,4 +28,4 @@ jobs:
         run: npm run test:api
       
       - name: Run Ui Tests
-        run: npm test ui
+        run: npm test:ui
