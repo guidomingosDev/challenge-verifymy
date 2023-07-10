@@ -15,7 +15,6 @@ Cypress.Commands.add("createUser", (email, name, password, confirmPassword) => {
     cy.get('.styles__ContainerFormRegister-sc-7fhc7g-0 > .style__ContainerButton-sc-1wsixal-0').click({ force: true })
 })
 
-
 Cypress.Commands.add("getAccountUser", () => {
     cy.get("#modalText")
         .invoke("text")
@@ -26,7 +25,9 @@ Cypress.Commands.add("getAccountUser", () => {
             return valor.split("-")
         })
 })
-
+Cypress.Commands.add("validateText", (account, digit) => {
+    cy.get('#modalText').should('have.text', `A conta ${account}-${digit} foi criada com sucesso`)
+})
 
 Cypress.Commands.add("closeModal", () => {
     cy.get('#btnCloseModal').click()
@@ -37,6 +38,7 @@ Cypress.Commands.add("clearFields", () => {
     cy.get(':nth-child(3) > .input__default').click({ force: true }).clear()
     cy.get(':nth-child(4) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default').click({ force: true }).clear()
     cy.get(':nth-child(5) > .style__ContainerFieldInput-sc-s3e9ea-0 > .input__default').click({ force: true }).clear()
+    cy.get('#toggleAddBalance').click({ force: true })
 })
 
 Cypress.Commands.add("login", (email, password) => {
@@ -45,12 +47,18 @@ Cypress.Commands.add("login", (email, password) => {
     cy.get('.otUnI').click()
 })
 
+Cypress.Commands.add("checkBalance", (value) => {
+    const expectedValue = new RegExp(`R\\$[\\s]*${value.replace('.', '\\.')}`);
+    cy.get('#textBalance').invoke('text').then(actualValue => {
+      expect(actualValue.trim()).to.match(expectedValue);
+    });
+});  
 
-Cypress.Commands.add("makeTransfer", (account, digit, money) => {
+Cypress.Commands.add("makeTransfer", (account, digit) => {
     cy.get('#btn-TRANSFERÊNCIA').click()
     cy.get(':nth-child(1) > .input__default').type(account)
     cy.get('.account__data > :nth-child(2) > .input__default').type(digit)
-    cy.get('label[for="transferValue"]').next('input').type(money);
+    cy.get('label[for="transferValue"]').next('input').type('100');
     cy.get(':nth-child(3) > .input__default').click({ force: true }).type('teste')
     cy.get('.style__ContainerButton-sc-1wsixal-0').click()
 })
