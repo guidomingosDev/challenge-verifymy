@@ -34,6 +34,8 @@ Plus: GitHub workflow (GitHub Action) has been added.
 - Make the transfer
 
 - Validate the transaction
+    - The application exhibited unexpected behavior when validating the balance of user two's bank account, as the money was not being added correctly. Despite this, I proceeded with the scenario as it is, as I suspect that this issue might be related to the application's use of local memory storage. However, I was able to manually validate the same scenario successfully.
+
 
 ## **Requirements** 
 
@@ -70,4 +72,19 @@ To run the UI tests:
 ```
  npm run test:ui
 ```
+# Bug Reports:
+
+### Account Registration Screen:
+- It is possible to create a new account with an email that already exists.
+
+- After creating an account, the form is not cleared.
+
+### Transfer Screen
+![image](https://github.com/guidomingosDev/challenge-verifymy/assets/112564366/6b5002ef-2d36-4ee3-bbfe-49399a4aabd5)
+
+- The account number and digit fields in the form accept letters.
+- The account number and digit fields in the form do not have a character limit.
+- The error message of the input "Valor transferência" is not correct. May interfere with the user's reading
+- Even with invalid data, button "Transferir agora" is enabled
+
 
